@@ -1,19 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:quran_app/core/assets_manager.dart';
-import 'package:quran_app/presentation/screens/home/tabs/quran_tab/quran_tab.dart';
 import 'package:quran_app/presentation/screens/quran_details_screen/widgets/verses_widget.dart';
+
+import '../../../core/assets_manager.dart';
+import '../home/tabs/quran_tab/quran_tab.dart';
 
 class QuranDetailsScreen extends StatefulWidget {
   const QuranDetailsScreen({super.key});
-
   @override
   State<QuranDetailsScreen> createState() => _QuranDetailsScreenState();
 }
-
 class _QuranDetailsScreenState extends State<QuranDetailsScreen> {
   List<String> verses = [];
-
   @override
   Widget build(BuildContext context) {
     SuraItem suraItem = ModalRoute.of(context)?.settings.arguments as SuraItem;
