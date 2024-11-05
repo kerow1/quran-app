@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:quran_app/core/routes_manager.dart';
-import 'package:quran_app/presentation/screens/home/tabs/quran_tab/quran_tab.dart';
+
+import '../../../../../../core/routes_manager.dart';
+import '../quran_tab.dart';
 
 class SuraNameWidget extends StatelessWidget {
   SuraNameWidget({super.key, required this.suraItem});
