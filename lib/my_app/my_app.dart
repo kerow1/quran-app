@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:quran_app/config/theme/my_theme.dart';
-import 'package:quran_app/presentation/screens/home/splash/splash_screen.dart';
-import 'package:quran_app/presentation/screens/quran_details_screen/quran_details_screen.dart';
 
+import '../config/theme/my_theme.dart';
 import '../core/routes_manager.dart';
+import '../presentation/screens/hadith_details_screen/hadith_details_screen.dart';
 import '../presentation/screens/home/home_screen.dart';
+import '../presentation/screens/home/splash/splash_screen.dart';
+import '../presentation/screens/quran_details_screen/quran_details_screen.dart';
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
@@ -17,6 +18,7 @@ class MyApp extends StatelessWidget {
         RoutesManager.homeRoute: (_) => const HomeScreen(),
         RoutesManager.splashRoute: (_) => const SplashScreen(),
         RoutesManager.quranDetailsRoute: (_) => const QuranDetailsScreen(),
+        RoutesManager.HadithDetailsRoute: (_) => const HadithDetailsScreen(),
       },
       theme: MyTheme.lightTheme,
       initialRoute: RoutesManager.splashRoute,
