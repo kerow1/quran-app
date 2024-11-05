@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:quran_app/core/colors_manager.dart';
+
+import '../../core/colors_manager.dart';
 
 class MyTheme {
   static ThemeData lightTheme = ThemeData(
@@ -27,6 +28,7 @@ class MyTheme {
         elevation: 18,
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
       ),
+      indicatorColor: Colors.white,
       textTheme: const TextTheme(
         headlineMedium: TextStyle(
           fontSize: 21,

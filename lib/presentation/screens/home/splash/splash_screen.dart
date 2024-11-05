@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:quran_app/core/assets_manager.dart';
-import 'package:quran_app/core/routes_manager.dart';
+
+import '../../../../core/assets_manager.dart';
+import '../../../../core/routes_manager.dart';
 
 class SplashScreen extends StatelessWidget {
   const SplashScreen({super.key});
