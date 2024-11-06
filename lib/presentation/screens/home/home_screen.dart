@@ -43,23 +43,23 @@ class _HomeScreenState extends State<HomeScreen> {
         bottomNavigationBar: BottomNavigationBar(
           items: const [
             BottomNavigationBarItem(
-                backgroundColor: Colorsmanager.goldColor,
+                backgroundColor: ColorsManager.goldColor,
                 icon: ImageIcon(AssetImage(AssetsManager.quranIcon)),
                 label: StringsManager.quranLabel),
             BottomNavigationBarItem(
-                backgroundColor: Colorsmanager.goldColor,
+                backgroundColor: ColorsManager.goldColor,
                 icon: ImageIcon(AssetImage(AssetsManager.hadithIcon)),
                 label: StringsManager.hadithLabel),
             BottomNavigationBarItem(
-                backgroundColor: Colorsmanager.goldColor,
+                backgroundColor: ColorsManager.goldColor,
                 icon: ImageIcon(AssetImage(AssetsManager.sebhaIcon)),
                 label: StringsManager.tasbehLabel),
             BottomNavigationBarItem(
-                backgroundColor: Colorsmanager.goldColor,
+                backgroundColor: ColorsManager.goldColor,
                 icon: ImageIcon(AssetImage(AssetsManager.radioIcon)),
                 label: StringsManager.radioLabel),
             BottomNavigationBarItem(
-                backgroundColor: Colorsmanager.goldColor,
+                backgroundColor: ColorsManager.goldColor,
                 icon: Icon(Icons.settings_rounded),
                 label: StringsManager.settingLabel),
           ],
