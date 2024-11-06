@@ -1,5 +1,5 @@
 import 'dart:ui';
 
-class Colorsmanager {
+class ColorsManager {
   static const Color goldColor = Color(0xFFB7935F);
 }
