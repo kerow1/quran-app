@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 import '../config/theme/my_theme.dart';
 import '../core/routes_manager.dart';
@@ -19,8 +20,14 @@ class MyApp extends StatelessWidget {
         RoutesManager.quranDetailsRoute: (_) => const QuranDetailsScreen(),
         RoutesManager.HadithDetailsRoute: (_) => const HadithDetailsScreen(),
       },
+      localizationsDelegates: AppLocalizations.localizationsDelegates,
       theme: MyTheme.lightTheme,
       initialRoute: RoutesManager.splashRoute,
+      supportedLocales: const [
+        Locale('ar'), // English
+        Locale('en'), // Spanish
+      ],
+      locale: Locale('ar'),
     );
   }
 }
