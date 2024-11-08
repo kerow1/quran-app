@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:quran_app/presentation/screens/home/tabs/settings_tab/widgets/language_bottom_sheet.dart';
 import 'package:quran_app/presentation/screens/home/tabs/settings_tab/widgets/theme_bottom_sheet.dart';
 
@@ -12,7 +13,8 @@ class SettingsTab extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Text('Theme', style: Theme.of(context).textTheme.labelMedium),
+          Text(AppLocalizations.of(context)!.theme,
+              style: Theme.of(context).textTheme.labelMedium),
           const SizedBox(
             height: 8,
           ),
@@ -26,14 +28,15 @@ class SettingsTab extends StatelessWidget {
               decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(8),
                   border: Border.all(color: Theme.of(context).dividerColor)),
-              child:
-                  Text('Light', style: Theme.of(context).textTheme.labelSmall),
+              child: Text(AppLocalizations.of(context)!.light,
+                  style: Theme.of(context).textTheme.labelSmall),
             ),
           ),
           const SizedBox(
             height: 16,
           ),
-          Text('Language', style: Theme.of(context).textTheme.labelMedium),
+          Text(AppLocalizations.of(context)!.language,
+              style: Theme.of(context).textTheme.labelMedium),
           const SizedBox(
             height: 8,
           ),
@@ -47,7 +50,7 @@ class SettingsTab extends StatelessWidget {
               decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(8),
                   border: Border.all(color: Theme.of(context).dividerColor)),
-              child: Text('English',
+              child: Text(AppLocalizations.of(context)!.english,
                   style: Theme.of(context).textTheme.labelSmall),
             ),
           ),

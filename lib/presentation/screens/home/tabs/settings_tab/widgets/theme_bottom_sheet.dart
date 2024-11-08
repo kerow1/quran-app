@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class ThemeBottomSheet extends StatefulWidget {
   const ThemeBottomSheet({super.key});
@@ -11,16 +12,16 @@ class _ThemeBottomSheetState extends State<ThemeBottomSheet> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.all(12),
+      padding: const EdgeInsets.all(12),
       width: double.infinity,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          buildSelectedItemThemeWidget('light'),
-          SizedBox(
+          buildSelectedItemThemeWidget(AppLocalizations.of(context)!.light),
+          const SizedBox(
             height: 8,
           ),
-          buildSelectedItemThemeWidget('Dark')
+          buildUnSelectedItemThemeWidget(AppLocalizations.of(context)!.dark)
         ],
       ),
     );
@@ -33,8 +34,8 @@ class _ThemeBottomSheetState extends State<ThemeBottomSheet> {
           selectedTheme,
           style: Theme.of(context).textTheme.displayMedium,
         ),
-        Spacer(),
-        Icon(
+        const Spacer(),
+        const Icon(
           Icons.check,
           color: Colors.white,
           size: 28,

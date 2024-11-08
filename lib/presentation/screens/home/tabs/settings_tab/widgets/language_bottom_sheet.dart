@@ -20,7 +20,7 @@ class _LanguageBottomSheetState extends State<LanguageBottomSheet> {
           SizedBox(
             height: 8,
           ),
-          buildUnSelectedItemLangWidget('العربية'),
+          buildUnSelectedItemLangWidget('Arabic'),
         ],
       ),
     );
