@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:provider/provider.dart';
 import 'package:quran_app/presentation/screens/quran_details_screen/widgets/verses_widget.dart';
+import 'package:quran_app/providers/theme_provider.dart';
 
 import '../../../core/assets_manager.dart';
 import '../home/tabs/quran_tab/quran_tab.dart';
@@ -14,11 +16,14 @@ class _QuranDetailsScreenState extends State<QuranDetailsScreen> {
   List<String> verses = [];
   @override
   Widget build(BuildContext context) {
+    var themeProvider = Provider.of<ThemeProvider>(context);
     SuraItem suraItem = ModalRoute.of(context)?.settings.arguments as SuraItem;
     if (verses.isEmpty) readQuranFileV2(suraItem.index + 1);
     return Stack(children: [
       Image.asset(
-        AssetsManager.mainBgLight,
+        themeProvider.isLightTheme()
+            ? AssetsManager.mainBgLight
+            : AssetsManager.mainBgDark,
         fit: BoxFit.fill,
         width: double.infinity,
         height: double.infinity,

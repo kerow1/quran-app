@@ -6,7 +6,7 @@ import '../../../../../core/assets_manager.dart';
 import 'widgets/hadith_title_widget.dart';
 
 class HadithTab extends StatefulWidget {
-  HadithTab({super.key});
+  const HadithTab({super.key});
 
   @override
   State<HadithTab> createState() => _HadithTabState();
@@ -29,8 +29,9 @@ class _HadithTabState extends State<HadithTab> {
         ),
         Text(
           AppLocalizations.of(context)!.hadithHeader,
-          style:
-              const TextStyle(color: Colors.black, fontWeight: FontWeight.bold),
+          style: TextStyle(
+              fontWeight: FontWeight.bold,
+              color: Theme.of(context).colorScheme.secondary),
         ),
         Divider(
           color: Theme.of(context).dividerColor,
