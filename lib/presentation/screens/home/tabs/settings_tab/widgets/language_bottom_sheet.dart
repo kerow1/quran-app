@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import 'package:quran_app/providers/language_provider.dart';
 
 class LanguageBottomSheet extends StatefulWidget {
   const LanguageBottomSheet({super.key});
@@ -10,17 +12,30 @@ class LanguageBottomSheet extends StatefulWidget {
 class _LanguageBottomSheetState extends State<LanguageBottomSheet> {
   @override
   Widget build(BuildContext context) {
+    var langProvider = Provider.of<LanguageProvider>(context);
     return Container(
-      padding: EdgeInsets.all(12),
+      padding: const EdgeInsets.all(12),
       width: double.infinity,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          buildSelectedItemLangWidget('English'),
-          SizedBox(
+          InkWell(
+              onTap: () {
+                langProvider.changeAppLanguage('en');
+              },
+              child: langProvider.currentLanguage == 'en'
+                  ? buildSelectedItemLangWidget('English')
+                  : buildUnSelectedItemLangWidget('English')),
+          const SizedBox(
             height: 8,
           ),
-          buildUnSelectedItemLangWidget('Arabic'),
+          InkWell(
+              onTap: () {
+                langProvider.changeAppLanguage('ar');
+              },
+              child: langProvider.currentLanguage == 'ar'
+                  ? buildSelectedItemLangWidget('العربية')
+                  : buildUnSelectedItemLangWidget('العربية')),
         ],
       ),
     );
@@ -33,10 +48,9 @@ class _LanguageBottomSheetState extends State<LanguageBottomSheet> {
           selectedLang,
           style: Theme.of(context).textTheme.displayMedium,
         ),
-        Spacer(),
-        Icon(
+        const Spacer(),
+        const Icon(
           Icons.check,
-          color: Colors.white,
           size: 28,
         )
       ],
@@ -50,9 +64,8 @@ class _LanguageBottomSheetState extends State<LanguageBottomSheet> {
           unSelectedLang,
           style: Theme.of(context)
               .textTheme
-              .displayMedium
-              ?.copyWith(color: Colors.black),
-        ),
+                .displayMedium
+                ?.copyWith(color: Theme.of(context).colorScheme.secondary)),
       ],
     );
   }
